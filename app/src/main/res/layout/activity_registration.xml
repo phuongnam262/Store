@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:textColor="#888887"
+        android:textColorHint="#888887"
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:drawablePadding="10dp"
         android:elevation="3dp"
         android:padding="13dp"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_img"
@@ -34,7 +34,7 @@
 
 
     <EditText
-        android:textColor="#888887"
+        android:textColorHint="#888887"
         android:id="@+id/email_reg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -44,14 +44,14 @@
         android:drawablePadding="10dp"
         android:elevation="3dp"
         android:padding="13dp"
-        android:text="Email"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
-        android:textColor="#888887"
+        android:textColorHint="#888887"
         android:id="@+id/password_reg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -61,14 +61,15 @@
         android:drawablePadding="10dp"
         android:elevation="3dp"
         android:padding="13dp"
-        android:text="Password"
+        android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_reg"
         app:layout_constraintWidth_percent=".8" />
 
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/reg_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -88,14 +89,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn"
-        app:layout_constraintVertical_bias=".2" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
+        app:layout_constraintVertical_bias=".2"
+        app:layout_constraintHorizontal_bias=".4"/>
 
     <TextView
         android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign IN"
+        android:text="Sign In"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/purple_700"
