@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.nav_home, R.id.nav_category, R.id.nav_profile
+            R.id.nav_home, R.id.nav_category, R.id.nav_profile,
+            R.id.nav_offers, R.id.nav_new_products, R.id.nav_my_orders,
+            R.id.nav_my_carts
         )
             .setDrawerLayout(drawer)
             .build()
