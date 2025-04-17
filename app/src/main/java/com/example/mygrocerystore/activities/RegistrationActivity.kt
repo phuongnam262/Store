@@ -1,18 +1,20 @@
-package com.example.mygrocerystore
+package com.example.mygrocerystore.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mygrocerystore.R
 import com.example.mygrocerystore.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var signUp: Button
@@ -20,7 +22,7 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var name: EditText
     private lateinit var signIn: TextView
-
+    private lateinit var progressBar: ProgressBar
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
@@ -32,7 +34,9 @@ class RegistrationActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        
+        progressBar = findViewById(R.id.progressbar)
+        progressBar.setVisibility(View.GONE)
+
         signIn=findViewById(R.id.sign_in)
         signUp=findViewById(R.id.reg_btn)
         email=findViewById(R.id.email_reg)
@@ -46,6 +50,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         signUp.setOnClickListener {
             createUser()
+            progressBar.setVisibility(View.VISIBLE)
         }
 
     }
@@ -82,11 +87,12 @@ class RegistrationActivity : AppCompatActivity() {
                     val userModel = UserModel(userName, userEmail, userPassword)
                     val userId = task.result?.user?.uid
                     database.getReference("Users").child(userId.toString()).setValue(userModel)
-
+                    progressBar.setVisibility(View.GONE)
 
                     Toast.makeText(this, "Registration Successfully", Toast.LENGTH_SHORT).show()
                     // Bạn có thể chuyển qua màn hình chính ở đây nếu muốn
                 } else {
+                    progressBar.setVisibility(View.GONE)
                     val errorMessage = task.exception?.message ?: "Unknown error occurred"
                     Toast.makeText(this, "Registration Failed: $errorMessage", Toast.LENGTH_SHORT).show()
                 }
@@ -94,7 +100,3 @@ class RegistrationActivity : AppCompatActivity() {
     }
 
 }
-
-
-
-
