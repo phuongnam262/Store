@@ -24,22 +24,22 @@
         tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/nav_offers"
-        android:name="com.example.mygrocerystore.OffersFragment"
+        android:name="com.example.mygrocerystore.ui.fragment.offersFragment"
         android:label="@string/offers"
         tools:layout="@layout/fragment_offers" />
     <fragment
         android:id="@+id/nav_new_products"
-        android:name="com.example.mygrocerystore.newProductsFragment"
+        android:name="com.example.mygrocerystore.ui.fragment.newProductsFragment"
         android:label="@string/new_products"
         tools:layout="@layout/fragment_new_products" />
     <fragment
         android:id="@+id/nav_my_orders"
-        android:name="com.example.mygrocerystore.MyOrdersFragment"
+        android:name="com.example.mygrocerystore.ui.fragment.myOrdersFragment"
         android:label="@string/my_orders"
         tools:layout="@layout/fragment_my_orders" />
     <fragment
         android:id="@+id/nav_my_carts"
-        android:name="com.example.mygrocerystore.myCartsFragment"
+        android:name="com.example.mygrocerystore.ui.fragment.myCartsFragment"
         android:label="@string/my_carts"
         tools:layout="@layout/fragment_my_carts" />
 </navigation>

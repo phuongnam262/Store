@@ -86,7 +86,7 @@ class RegistrationActivity : AppCompatActivity() {
 
                     val userModel = UserModel(userName, userEmail, userPassword)
                     val userId = task.result?.user?.uid
-                    database.getReference("Users").child(userId.toString()).setValue(userModel)
+                    database.getReference().child("User").child(userId.toString()).setValue(userModel)
                     progressBar.setVisibility(View.GONE)
 
                     Toast.makeText(this, "Registration Successfully", Toast.LENGTH_SHORT).show()
